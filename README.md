@@ -2,6 +2,6 @@
 
 ## Demo
 <video controls width="400">
-  <source src="assets/demo.mp4" type="video/mp4">
+  <source src="demo.mp4" type="video/mp4">
 </video>
 
