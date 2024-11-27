@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0f172a;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.box {
+    position: relative;
+    width: 380px;
+    height: 400px;
+    background: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 2px;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 0, 0.8) 0%,
+        transparent 10%,
+        rgba(255, 0, 255, 0.8) 50%,
+        transparent 80%,
+        rgba(0, 255, 255, 0.8) 100%);
+    background-size: 200% 200%;
+    animation: glowing-border 3s linear infinite;
+    z-index: -1;
+}
+
+@keyframes glowing-border {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 200%;
+    }
+}
+
+.form {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.form h2 {
+    margin: 0 0 20px;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+}
+
+.inputBox {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: 2px yellowgreen;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.inputBox input:focus + span,
+.inputBox input:valid + span {
+    top: -20px;
+    left: 0;
+    color: #e4e1d6;
+    font-size: 12px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.links a {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #00ffcc; /* Culoarea implicită */
+    color: #000;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffff00; /* Culoarea la hover */
+}
+
+button:focus {
+    background: #00ffcc; /* Asigură-te că starea focus păstrează culoarea de bază */
+    outline: none; /* Elimină conturul browserului */
+}
+
+button:active {
+    background: #ffff00; /* Culoarea la apăsare */
+    transform: scale(0.98); /* Micșorare pentru efect vizual */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Adaugă un efect de apăsare */
+}
+
